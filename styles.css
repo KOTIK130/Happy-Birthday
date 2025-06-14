@@ -49,17 +49,17 @@ body {
 
 header {
     text-align: center;
-    padding: 40px;
+    padding: 20px;
     position: relative;
     z-index: 1;
 }
 
 h1 {
     font-family: 'Dancing Script', cursive;
-    font-size: 5em;
+    font-size: 4em;
     color: #fff;
-    text-shadow: 0 0 20px #ff6f91, 0 0 40px #ff6f91, 0 0 60px #ff6f91;
-    animation: neonBurst 2.5s ease-in-out infinite;
+    text-shadow: 0 0 10px #ff6f91, 0 0 20px #ff6f91;
+    animation: neonBurst 2s ease-in-out infinite;
 }
 
 h1 span {
@@ -67,8 +67,8 @@ h1 span {
 }
 
 @keyframes neonBurst {
-    0%, 100% { text-shadow: 0 0 20px #ff6f91, 0 0 40px #ff6f91, 0 0 60px #ff6f91; }
-    50% { text-shadow: 0 0 30px #ff6f91, 0 0 60px #ff6f91, 0 0 90px #ff6f91; }
+    0%, 100% { text-shadow: 0 0 10px #ff6f91, 0 0 20px #ff6f91; }
+    50% { text-shadow: 0 0 15px #ff6f91, 0 0 30px #ff6f91; }
 }
 
 main {
@@ -76,7 +76,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 70vh;
+    height: 75vh;
     position: relative;
     z-index: 1;
 }
@@ -84,13 +84,13 @@ main {
 #show-message {
     background: linear-gradient(45deg, #ff6f91, #a1c4fd, #fff3b0);
     border: none;
-    padding: 20px 50px;
+    padding: 15px 40px;
     font-family: 'Dancing Script', cursive;
-    font-size: 2.2em;
+    font-size: 1.8em;
     color: #fff;
-    border-radius: 50px;
+    border-radius: 40px;
     cursor: pointer;
-    box-shadow: 0 0 25px rgba(255, 111, 145, 0.9);
+    box-shadow: 0 0 15px rgba(255, 111, 145, 0.7);
     position: relative;
     overflow: hidden;
     animation: pulseGlow 1.5s ease-in-out infinite;
@@ -103,26 +103,26 @@ main {
     left: 50%;
     width: 0;
     height: 0;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
     transform: translate(-50%, -50%);
-    transition: width 0.4s ease, height 0.4s ease;
+    transition: width 0.3s ease, height 0.3s ease;
 }
 
 #show-message:hover::after {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
 }
 
 @keyframes pulseGlow {
-    0%, 100% { transform: scale(1); box-shadow: 0 0 25px rgba(255, 111, 145, 0.9); }
-    50% { transform: scale(1.1); box-shadow: 0 0 40px rgba(255, 111, 145, 1); }
+    0%, 100% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 111, 145, 0.7); }
+    50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(255, 111, 145, 0.9); }
 }
 
 #message h2 {
     font-family: 'Dancing Script', cursive;
-    font-size: 4.5em;
+    font-size: 3.5em;
     color: #fff;
-    text-shadow: 0 0 20px #a1c4fd, 0 0 40px #a1c4fd;
+    text-shadow: 0 0 10px #a1c4fd, 0 0 20px #a1c4fd;
     text-align: center;
     white-space: pre-wrap;
     position: relative;
@@ -135,27 +135,32 @@ main {
 
 .floating-star {
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     background: radial-gradient(circle, #fff3b0, transparent);
     border-radius: 50%;
-    animation: float 5s ease-in-out infinite;
+    animation: float 4s ease-in-out infinite;
 }
 
 @keyframes float {
     0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-    50% { transform: translateY(-50px) rotate(180deg); opacity: 0.5; }
+    50% { transform: translateY(-40px) rotate(180deg); opacity: 0.6; }
     100% { transform: translateY(0) rotate(360deg); opacity: 1; }
 }
 
 @keyframes lightWave {
-    0% { box-shadow: 0 0 0 0 rgba(161, 196, 253, 0.7); }
-    50% { box-shadow: 0 0 0 50px rgba(161, 196, 253, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(161, 196, 253, 0.6); }
+    50% { box-shadow: 0 0 0 40px rgba(161, 196, 253, 0); }
     100% { box-shadow: 0 0 0 0 rgba(161, 196, 253, 0); }
 }
 
 @media (max-width: 600px) {
-    h1 { font-size: 3em; }
-    #message h2 { font-size: 2.5em; }
-    #show-message { font-size: 1.5em; padding: 15px 30px; }
+    h1 { font-size: 2.5em; }
+    #message h2 { font-size: 2em; }
+    #show-message { 
+        font-size: 1.2em; 
+        padding: 10px 25px; 
+        border-radius: 30px;
+    }
+    .floating-star { width: 10px; height: 10px; }
 }
